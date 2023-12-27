@@ -43,6 +43,7 @@ class MyApp extends StatelessWidget {
           ],
           supportedLocales: const [
             Locale('en', ''), // English, no country code
+            Locale('es', 'ES'), // Spanish, from Spain
           ],
 
           // Use AppLocalizations to configure the correct application title
@@ -56,7 +57,21 @@ class MyApp extends StatelessWidget {
           // Define a light and dark color theme. Then, read the user's
           // preferred ThemeMode (light, dark, or system default) from the
           // SettingsController to display the correct theme.
-          theme: ThemeData(),
+          theme: ThemeData(
+            colorScheme: ColorScheme(
+              brightness: brightness,
+              primary: const Color(0xFFFFDC83),
+              onPrimary: Colors.black,
+              secondary: secondary,
+              onSecondary: onSecondary,
+              error: error,
+              onError: onError,
+              background: background,
+              onBackground: onBackground,
+              surface: surface,
+              onSurface: onSurface
+            ),
+          ),
           darkTheme: ThemeData.dark(),
           themeMode: settingsController.themeMode,
 
