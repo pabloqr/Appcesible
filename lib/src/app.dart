@@ -58,21 +58,43 @@ class MyApp extends StatelessWidget {
           // preferred ThemeMode (light, dark, or system default) from the
           // SettingsController to display the correct theme.
           theme: ThemeData(
-            colorScheme: ColorScheme(
-              brightness: brightness,
-              primary: const Color(0xFFFFDC83),
-              onPrimary: Colors.black,
-              secondary: secondary,
-              onSecondary: onSecondary,
-              error: error,
-              onError: onError,
-              background: background,
-              onBackground: onBackground,
-              surface: surface,
-              onSurface: onSurface
-            ),
+            appBarTheme: const AppBarTheme(
+                backgroundColor: Color(0xFF55968F),
+                foregroundColor: Colors.white,
+                surfaceTintColor: Colors.white,
+                toolbarHeight: 64.0,
+                titleTextStyle: TextStyle(
+                    fontSize: 24, fontFeatures: [FontFeature.enable('smcp')])),
+            colorScheme: const ColorScheme(
+                brightness: Brightness.light,
+                primary: Color(0xFF55968F),
+                onPrimary: Colors.white,
+                secondary: Color(0xFFFFDC83),
+                onSecondary: Colors.black,
+                error: Color(0xFFCC4545),
+                onError: Colors.white,
+                surface: Color(0xFFEEEEEE),
+                onSurface: Colors.black),
           ),
-          darkTheme: ThemeData.dark(),
+          darkTheme: ThemeData(
+            appBarTheme: const AppBarTheme(
+                backgroundColor: Color(0xFF344B5E),
+                foregroundColor: Colors.white,
+                surfaceTintColor: Colors.white,
+                toolbarHeight: 64.0,
+                titleTextStyle: TextStyle(
+                    fontSize: 24, fontFeatures: [FontFeature.enable('smcp')])),
+            colorScheme: const ColorScheme(
+                brightness: Brightness.dark,
+                primary: Color(0xFF344B5E),
+                onPrimary: Colors.white,
+                secondary: Color(0xFFFFDC83),
+                onSecondary: Colors.black,
+                error: Color(0xFFCC4545),
+                onError: Colors.white,
+                surface: Color(0xFFEEEEEE),
+                onSurface: Colors.black),
+          ),
           themeMode: settingsController.themeMode,
 
           // Define a function to handle named routes in order to support

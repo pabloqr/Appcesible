@@ -1,3 +1,4 @@
+import 'package:appcesible/src/app_bar/bottom_bat_teacher.dart';
 import 'package:flutter/material.dart';
 
 import '../settings/settings_view.dart';
@@ -66,6 +67,7 @@ class SampleItemListView extends StatelessWidget {
           );
         },
       ),
+      bottomNavigationBar: const BottomBarTeacher(),
     );
   }
 }
